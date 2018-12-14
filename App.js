@@ -9,7 +9,7 @@ import AlbumList from './src/component/AlbumList';
 const App = () => {
   return (
     <View style = {{flex : 1}}>
-    <Header headerText ={'Header'} />
+    <Header headerText ={'Albums'} />
     <AlbumList />
     </View>
     // <BlinkApp />

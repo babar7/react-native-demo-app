@@ -1,5 +1,5 @@
 import React from 'react';
-import {Text, View, Image} from 'react-native';
+import {Text, View, Image, Linking} from 'react-native';
 import Card from './Card';
 import CardItem from './CardItem';
 import Button from './Button';
@@ -7,7 +7,7 @@ import Button from './Button';
 // if we have more then two refrance of props then we make it an object
 const Albumdetail = ( {album}) => {
  
-   const { title , artist , thumbnail_image, image } = album ;
+   const { title , artist , thumbnail_image, image, url } = album ;
    const { thumbnailStyle,
            headerContentStyle,
            thumbnailContainerStyle,
@@ -31,10 +31,11 @@ const Albumdetail = ( {album}) => {
             <CardItem>
                 <Image source = {{uri : image}}  style = {imageStyle}/>
             </CardItem>
-            
-            <CardItem>
-                <Button />
 
+            <CardItem>
+                <Button onPress={ ()=> Linking.openURL(url)}>
+                Buy now !
+                </Button>
             </CardItem>
 
         </Card>
